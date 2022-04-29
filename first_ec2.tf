@@ -1,8 +1,11 @@
+variable "ami" {}
+variable "region" {}
+variable "instance_type" {}
 variable "access_key" {}
 variable "secret_key" {}
 resource "aws_instance" "instance1" {
-  ami           = "ami-0c02fb55956c7d316"
-  instance_type = "t2.micro"
+  ami           = var.ami
+  instance_type = var.instance_type
   tags = {
     Name = "instance3"
   }
